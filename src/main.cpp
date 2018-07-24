@@ -3,7 +3,7 @@
 #include <chrono>
 #include <climits>
 #include <iostream>
-#include <vector>
+#include <set>
 
 #ifdef DEBUG
 int list_max_size = 10;
@@ -26,14 +26,14 @@ int main(int argc, char* argv[]) {
     std::uniform_int_distribution<> dis(0, INT_MAX - 1);
 
     // init the skiplist
-    std::vector<int> vec;
+    std::set<int> iset;
 
     // perform the operations
     for(int i = 0; i < list_max_size; i++) {
-        vec.push_back(dis(gen));
+        iset.insert(dis(gen));
 
         if(i % 1000 == 0) {
-            std::find(vec.begin(), vec.end(), INT_MAX);
+            std::find(iset.begin(), iset.end(), INT_MAX);
         }
     }
 }
