@@ -3,7 +3,7 @@
 #include <chrono>
 #include <climits>
 #include <iostream>
-#include "structures/skiplist.h"
+#include <vector>
 
 #ifdef DEBUG
 int list_max_size = 10;
@@ -26,17 +26,14 @@ int main(int argc, char* argv[]) {
     std::uniform_int_distribution<> dis(0, INT_MAX - 1);
 
     // init the skiplist
-    Skiplist mylist = skiplistCreate();
-    size_t skiplist_size = 0;
+    std::vector<int> vec;
 
     // perform the operations
     for(int i = 0; i < list_max_size; i++) {
-        skiplistInsert(mylist, dis(gen));
-        skiplist_size++;
+        vec.push_back(dis(gen));
 
         if(i % 1000 == 0) {
-            skiplistSearch(mylist, INT_MAX);
+            std::find(vec.begin(), vec.end(), INT_MAX);
         }
     }
-    skiplistDestroy(mylist);
 }
