@@ -11,7 +11,7 @@ int list_max_size = 10;
 int list_max_size = 1000000;
 #endif
 
-int MAX_HEIGHT = 13;
+int MAX_HEIGHT = 50;
 int LEVEL_PROBABILITY = 2;
 
 int main(int argc, char* argv[]) {
