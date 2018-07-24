@@ -3,4 +3,4 @@ BUILD_DIR=./build
 
 all:
 	mkdir -p $(BUILD_DIR)
-	g++ $(FLAGS) -o $(BUILD_DIR)/list_search src/main.cpp
+	g++ $(FLAGS) -o $(BUILD_DIR)/list_search src/main.cpp src/structures/skiplist.cpp
